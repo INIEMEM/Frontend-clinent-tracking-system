@@ -1,0 +1,31 @@
+.dashoard-sidebar
+{
+  width: 172px;
+  border-right: 1px solid var(--grey-color);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.dashoard-sidebar-mobile
+{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid var(--grey-color);
+  height: 50px;
+}
+@media screen and (max-width: 1250px) 
+{
+  .dashoard-sidebar
+  {
+    display: none;
+  }
+  .dashoard-sidebar-mobile
+  {
+    display: flex;
+  }
+}

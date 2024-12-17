@@ -1,0 +1,15 @@
+.dashboard-outlet
+{
+  margin-left: 172px;
+  position:'relative';
+  margin-Top: 60px;
+}
+@media screen and (max-width: 1250px) 
+{
+  .dashboard-outlet
+  {
+    width: 100vw;
+    margin-left: 0;
+  }
+}
+

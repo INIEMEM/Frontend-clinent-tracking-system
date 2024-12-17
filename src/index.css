@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* --------- GENERAL STYLINGS --------- */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  /* text-align: center; */
+}
+
+:root
+{
+  --black-color: #232323;
+  --blue-color: #A3D4F7;
+  --green-color: #8BC34A;
+  --orange-color: #FFC04D;
+  --grey-color: #ddd;
+  --padding: 0 60px;
+  --padding-mobile: 0 20px;
+}
+a
+{
+  text-decoration: none;
+  color: inherit;
+}
+li
+{
+  list-style-type: none;
+}
+
+
+
+/* --------- UTILITY CLASSES ---------- */
+.flex
+{
+  display: flex;
+}
+.flex-align
+{
+  align-items: center;
+}
+.flex-justify-center
+{
+  justify-content: center;
+}
+.flex-justify-start
+{
+  justify-content: start;
+}
+.flex-justify-end
+{
+  justify-content: end;
+}
+.flex-center
+{
+  align-items: center;
+  justify-content: center; 
+}
+.flex-justify-between
+{
+  justify-content: space-between;
+}
+.flex-column
+{
+  flex-direction: column;
+}
+.display-none
+{
+  display: none;
+  
+}
+.links
+{
+  text-decoration: none;
+  color: inherit;
+}

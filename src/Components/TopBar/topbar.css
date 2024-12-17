@@ -1,0 +1,17 @@
+.topbar-container
+{
+  position: fixed;
+  right: 0;
+  top: 0;
+  border-bottom: 1px solid var(--grey-color);
+  width: calc(100vw - 172px);
+  height: 60px;
+  padding: 15px 20px;
+}
+@media screen and (max-width: 1250px) 
+{
+  .topbar-container
+  {
+    width: 100vw;
+  }
+}
