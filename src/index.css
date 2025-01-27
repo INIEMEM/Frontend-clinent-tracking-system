@@ -34,11 +34,11 @@ li
 /* --------- UTILITY CLASSES ---------- */
 .flex
 {
-  display: flex;
+  display: flex !important;
 }
 .flex-align
 {
-  align-items: center;
+  align-items: center !important;
 }
 .flex-justify-center
 {
