@@ -10,7 +10,7 @@ const MenuList = ({toggle}) => {
         <Link to='/dashboard'>Dashboard</Link>
       </Menu.Item>
       <Menu.Item key="prospects" icon = {<UsergroupAddOutlined />}>
-        <Link to='/prospects'>Prospects</Link>
+        <Link to='/dashboard/prospects'>Prospects</Link>
       </Menu.Item>
       <Menu.Item className='flex flex-align' key="clients" icon = {<ClientsIcon width={20} height={15}/>}>
         <Link to='/clients'>{!toggle && 'Client'}</Link>

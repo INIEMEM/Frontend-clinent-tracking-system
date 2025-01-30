@@ -1,0 +1,8 @@
+.user-card-holder
+{
+  flex: 1;
+  border: 0.7px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+ 
+}
