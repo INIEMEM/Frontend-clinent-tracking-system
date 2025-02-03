@@ -1,0 +1,18 @@
+.view-toggle{
+  font-size: 0.7rem;
+  width: 6.875rem;
+  /* padding: 0.59rem; */
+  height: 3rem;
+  border-radius: 1.875rem;
+  overflow: hidden;
+  border: 0.7px solid #ddd;
+}
+.grid-view-toggle, .table-view-toggle{
+  flex: 1;
+  cursor: pointer;
+}
+.active-toggle{
+  background-color: #464545;
+  color: white;
+  transition:background-color ease-in-out 450ms;
+}

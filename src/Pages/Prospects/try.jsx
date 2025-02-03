@@ -7,34 +7,14 @@ import UserCard from '../../Components/UserCard/UserCard'
 import './prospects.css'
 const { Search } = Input;
 const Prospects = () => {
- 
-
-  const [prospectData, setProspectData] = useState([
+  const prospectData = [
     {role: 'warm', portfolioLink: 'https://www.figma.com/', socialHandle: '@chaindustry', name: 'chaindustry'},
     {role: 'cold', portfolioLink: 'https://www.figma.com/', socialHandle: '@chaindustry', name: 'chaindustry'},
     {role: 'contract', portfolioLink: 'https://www.figma.com/', socialHandle: '@chaindustry', name: 'chaindustry'},
-  ])
-  const [filteredData, setFilteredData] = useState([])
-
-  useEffect(()=>{
-    setFilteredData(prospectData)
-  }, []);
-
-  function handleFiltered(role){
-    if(role === 'all'){
-      setFilteredData(prospectData);
-    }
-    else{
-      setFilteredData(prospectData.filter(data => {
-        if(data.role === role){
-          return data;
-        }
-      }))
-    }
-  }
+  ]
   const [view, setView] = useState('grid');
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [filteredData, setFilteredData] = useState([]);
   const onSearch = (value, _e, info) => console.log(info?.source, value);
   const showModal = () => {
     setIsModalOpen(true);
@@ -69,7 +49,17 @@ const Prospects = () => {
     },
   ];
 
-  
+  function handleFiltered(role) {
+    if (role === 'all') {
+      setFilteredData(prospectData);
+    } else {
+      setFilteredData(prospectData.filter(data => data.role === role));
+    }
+  }
+
+  useEffect(()=>{
+    setFilteredData(prospectData)
+  }, [])
   return (
     <div style={{padding: '1.2rem'}}>
         <div className="flex flex-justify-between flex-align">
@@ -82,23 +72,26 @@ const Prospects = () => {
             <Widgets icon={<UsergroupAddOutlined />} matrixs={50} text={'Warm Prospects'}/>
             <Widgets icon={<UsergroupAddOutlined />} matrixs={50} text={'Contracts'}/>
         </section>
-        <section className='flex flex-justify-between' style={{marginTop: 20}}>
+        <section className='flex flex-justify-between flex-align' style={{marginTop:20}}>
+          <div>
+            <Search
+              placeholder="input search text"
+              onSearch={onSearch}
+              style={{
+                
+              }}
+            />
             <div>
-              <Search
-                placeholder="input search text"
-                onSearch={onSearch}
-                />
-              <div className='flex' style={{gap:10, marginTop: 10}}>
-                <Button onClick={()=> handleFiltered('all')}>All</Button>
-                <Button onClick={()=> handleFiltered('cold')}>Cold</Button>
-                <Button onClick={()=> handleFiltered('warm')}>Warm</Button>
-                <Button onClick={()=> handleFiltered('contract')}>Contracts</Button>
-              </div>
-            </div>
-            <div className='view-toggle flex'>
-              <div className={`${view === 'grid' ? 'active-toggle': ''} grid-view-toggle flex flex-center `} onClick={()=> setView('grid')}>Grid</div>
-              <div className={`table-view-toggle flex flex-center ${view === 'table' ? 'active-toggle': ''}` } onClick={()=> setView('table')}>Table</div>
-            </div>
+              <Button onClick={()=> handleFiltered('all')}>All</Button>
+              <Button onClick={()=> handleFiltered('cold')}>Cold</Button>
+              <Button onClick={()=> handleFiltered('warm')}>Warm</Button>
+              <Button onClick={()=> handleFiltered('contract')}>Contract</Button>
+           </div>
+          </div>
+          <div className='flex  view-toggle'>
+            <div className='grid-view-toggle flex flex-center active-toggle' onClick={()=> setView('grid')}>Grid</div>
+            <div className='table-view-toggle flex flex-center' onClick={()=>setView('table')}>Table</div>
+          </div>
         </section>
         {view === 'grid' ? (<section className='flex' style={{gap:20, marginTop: 20}}>
           {filteredData && filteredData.map((prospect, index)=> (
